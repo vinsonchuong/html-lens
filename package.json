@@ -1,0 +1,58 @@
+{
+  "name": "html-lens",
+  "version": "0.0.1",
+  "description": "An interface for reading and transforming HTML",
+  "keywords": [
+    "html",
+    "parser"
+  ],
+  "homepage": "https://github.com/vinsonchuong/html-lens",
+  "bugs": "https://github.com/vinsonchuong/html-lens/issues",
+  "license": "MIT",
+  "author": "Vinson Chuong <vinsonchuong@gmail.com>",
+  "files": [
+    "LICENSE",
+    "README.md",
+    "src"
+  ],
+  "main": "src/HtmlLens.js",
+  "bin": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vinsonchuong/html-lens"
+  },
+  "scripts": {
+    "test": "ava"
+  },
+  "dependencies": {
+    "babel-runtime": "^6.22.0"
+  },
+  "devDependencies": {
+    "ava": "^0.17.0",
+    "babel-plugin-module-alias": "^1.6.0",
+    "babel-plugin-transform-runtime": "^6.22.0",
+    "babel-preset-latest": "^6.22.0"
+  },
+  "babel": {
+    "presets": [
+      "latest"
+    ],
+    "plugins": [
+      "transform-runtime",
+      [
+        "module-alias",
+        [
+          {
+            "src": "./src", "expose": "html-lens"
+          }
+        ]
+      ]
+    ]
+  },
+  "ava": {
+    "babel": "inherit",
+    "require": [
+      "babel-register"
+    ]
+  }
+}
