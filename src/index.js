@@ -1,2 +1,3 @@
-import HtmlLens from './HtmlLens'
-export default HtmlLens
+/* @flow */
+import Document from './Document'
+export default Document

@@ -9,7 +9,7 @@ An interface for reading and transforming HTML
 
 ## Usage
 ```js
-import HtmlLens from 'html-lens';
+import Document from 'html-lens';
 ```
 
 ### API Documentation

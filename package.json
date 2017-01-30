@@ -22,16 +22,22 @@
     "url": "https://github.com/vinsonchuong/html-lens"
   },
   "scripts": {
-    "test": "ava"
+    "test": "flow && ava"
   },
   "dependencies": {
-    "babel-runtime": "^6.22.0"
+    "babel-runtime": "^6.22.0",
+    "cssauron": "^1.4.0",
+    "minidom": "^1.0.0",
+    "pretty": "^1.0.0"
   },
   "devDependencies": {
     "ava": "^0.17.0",
     "babel-plugin-module-alias": "^1.6.0",
+    "babel-plugin-transform-flow-strip-types": "^6.22.0",
     "babel-plugin-transform-runtime": "^6.22.0",
-    "babel-preset-latest": "^6.22.0"
+    "babel-preset-latest": "^6.22.0",
+    "dedent": "^0.6.0",
+    "flow-bin": "^0.38.0"
   },
   "babel": {
     "presets": [
@@ -39,11 +45,13 @@
     ],
     "plugins": [
       "transform-runtime",
+      "transform-flow-strip-types",
       [
         "module-alias",
         [
           {
-            "src": "./src", "expose": "html-lens"
+            "src": "./src",
+            "expose": "html-lens"
           }
         ]
       ]
