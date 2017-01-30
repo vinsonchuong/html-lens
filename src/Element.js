@@ -29,14 +29,7 @@ export default class Element {
     return this.minidomElement.getAttribute(name)
   }
 
-  * traverse(): Generator<Element, void, void> {
-    yield this
-    for (const childElement of this.children) {
-      yield* childElement.traverse()
-    }
-  }
-
   querySelectorAll(selector: string): Element[] {
-    return findElements(selector, Array.from(this.traverse()))
+    return findElements(selector, this)
   }
 }

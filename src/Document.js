@@ -20,13 +20,7 @@ export default class Document {
     return formatHtml(this)
   }
 
-  * traverse(): Generator<Element, void, void> {
-    for (const childElement of this.children) {
-      yield* childElement.traverse()
-    }
-  }
-
   querySelectorAll(selector: string): Element[] {
-    return findElements(selector, Array.from(this.traverse()))
+    return findElements(selector, this.children[0])
   }
 }

@@ -39,24 +39,7 @@ test((t) => {
   const htmlElement = new Element(minidomDocument.documentElement)
 
   t.deepEqual(
-    Array.from(htmlElement.traverse()).map((element) => element.tagName),
+    htmlElement.querySelectorAll('*').map((element) => element.tagName),
     ['html', 'head', 'meta', 'body', 'p']
-  )
-})
-
-test((t) => {
-  const minidomDocument = minidom(`
-    <!doctype html>
-    <meta charset="utf-8">
-    <p>foo</p>
-    <div>
-      <p>bar</p>
-    </div>
-  `)
-  const htmlElement = new Element(minidomDocument.documentElement)
-
-  t.deepEqual(
-    htmlElement.querySelectorAll('p').map(String),
-    ['<p>foo</p>', '<p>bar</p>']
   )
 })
