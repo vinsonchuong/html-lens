@@ -1,6 +1,6 @@
 /* @flow */
 import test from 'ava'
-import minidom from 'minidom'
+import dedent from 'dedent'
 import Document from 'html-lens/Document'
 
 test((t) => {
@@ -10,6 +10,20 @@ test((t) => {
     <p>
       <span>Hello World!</span>
     </p>
+  `)
+
+  t.is(String(document), dedent`
+    <!doctype html>
+    <html>
+      <head>
+        <meta charset="utf-8">
+      </head>
+      <body>
+        <p>
+          <span>Hello World!</span>
+        </p>
+      </body>
+    </html>
   `)
 
   t.is(

@@ -10,6 +10,18 @@ An interface for reading and transforming HTML
 ## Usage
 ```js
 import Document from 'html-lens';
+
+const document = new Document(`
+  <!doctype html>
+  <meta charset="utf-8">
+  <p>
+    <span>Hello World!</span>
+  </p>
+`)
+
+console.log(document.toString())
+
+const span = document.querySelectorAll('span')[0]
 ```
 
 ### API Documentation

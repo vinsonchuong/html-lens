@@ -6,6 +6,7 @@ import findElements from './findElements';
 export default class Element {
   minidomElement: MinidomElement
   tagName: string
+  outerHTML: string
   textContent: string
   parentElement: ?Element
   children: Element[]
@@ -13,6 +14,7 @@ export default class Element {
   constructor(minidomElement: MinidomElement, parentElement: ?Element) {
     this.minidomElement = minidomElement
     this.tagName = minidomElement.tagName.toLowerCase()
+    this.outerHTML = minidomElement.outerHTML
     this.textContent = minidomElement.textContent
     this.children = [...minidomElement.children]
       .map((minidomElement) => new Element(minidomElement, this))
@@ -20,7 +22,7 @@ export default class Element {
   }
 
   toString(): string {
-    return formatHtml(this.minidomElement.outerHTML)
+    return formatHtml(this)
   }
 
   getAttribute(name: string): string {
