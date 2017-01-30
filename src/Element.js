@@ -4,29 +4,26 @@ import formatHtml from './formatHtml'
 import findElements from './findElements';
 
 export default class Element {
-  minidomElement: MinidomElement
   tagName: string
+  attributes: {[name: string]: string}
   outerHTML: string
   textContent: string
   parentElement: ?Element
   children: Element[]
 
   constructor(minidomElement: MinidomElement, parentElement: ?Element) {
-    this.minidomElement = minidomElement
     this.tagName = minidomElement.tagName.toLowerCase()
+    this.attributes = Array.from(minidomElement.attributes)
+      .reduce((memo, node) => Object.assign(memo, {[node.name]: node.value}), {})
     this.outerHTML = minidomElement.outerHTML
     this.textContent = minidomElement.textContent
+    this.parentElement = parentElement
     this.children = [...minidomElement.children]
       .map((minidomElement) => new Element(minidomElement, this))
-    this.parentElement = parentElement
   }
 
   toString(): string {
     return formatHtml(this)
-  }
-
-  getAttribute(name: string): string {
-    return this.minidomElement.getAttribute(name)
   }
 
   querySelectorAll(selector: string): Element[] {

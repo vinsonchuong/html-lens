@@ -4,7 +4,7 @@ import cssauron from 'cssauron'
 type Matchable<T> = {
   tagName: string,
   textContent: string,
-  getAttribute(name: string): string,
+  attributes: {[name: string]: string},
   parentElement: ?(T & Matchable<T>),
   children: (T & Matchable<T>)[]
 }
@@ -31,13 +31,13 @@ export default function findElements<S, T: S & Matchable<S>>(
   const match = cssauron({
     tag: 'tagName',
     contents: 'textContent',
-    id: 'getAttribute("id")',
-    class: 'getAttribute("class")',
+    id: 'attributes.id',
+    class: 'attributes.class',
     parent: (element) => elementLookup.has(element.parentElement) ?
       element.parentElement :
       null,
     children: 'children',
-    attr: 'getAttribute(attr)'
+    attr: 'attributes[attr]'
   })(selector)
 
   return elements.filter(match)

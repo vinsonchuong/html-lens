@@ -9,7 +9,7 @@ test((t) => {
     <!doctype html>
     <meta charset="utf-8">
     <p>
-      <span>Hello World!</span>
+      <span role="status">Hello World!</span>
     </p>
   `)
 
@@ -18,7 +18,7 @@ test((t) => {
   t.is(p.textContent.trim(), 'Hello World!')
   t.is(String(p), dedent`
     <p>
-      <span>Hello World!</span>
+      <span role="status">Hello World!</span>
     </p>
   `)
   t.is(p.children.length, 1)
@@ -26,8 +26,9 @@ test((t) => {
   const span = p.children[0]
   t.is(span.tagName, 'span')
   t.is(span.textContent, 'Hello World!')
-  t.is(String(span), '<span>Hello World!</span>')
+  t.is(String(span), '<span role="status">Hello World!</span>')
   t.is(span.parentElement, p)
+  t.is(span.attributes.role, 'status')
 })
 
 test((t) => {

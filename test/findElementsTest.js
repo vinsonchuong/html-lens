@@ -5,10 +5,8 @@ import findElements from 'html-lens/findElements'
 function makeElement(tagName, attributes = {}, parentElement) {
   return {
     tagName,
+    attributes,
     textContent: '',
-    getAttribute(name: string) {
-      return attributes[name]
-    },
     parentElement,
     children: []
   }
@@ -23,6 +21,7 @@ test((t) => {
   t.deepEqual(findElements('span', div), [span])
   t.deepEqual(findElements('.class', div), [span])
   t.deepEqual(findElements('#id', div), [span])
+  t.deepEqual(findElements('span[id="id"]', div), [span])
   t.deepEqual(findElements('div > span', div), [span])
 
   t.deepEqual(findElements('div > span', span), [])
