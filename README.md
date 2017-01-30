@@ -30,13 +30,14 @@ const span = document.querySelectorAll('span')[0]
 ### Getting Started
 The application requires the following external dependencies:
 * Node.js
+* Yarn
 
 The rest of the dependencies are handled through:
 ```bash
-npm install
+yarn
 ```
 
 Run tests with:
 ```bash
-npm test
+yarn test
 ```
