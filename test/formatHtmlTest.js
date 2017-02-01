@@ -3,16 +3,20 @@ import test from 'ava'
 import dedent from 'dedent'
 import formatHtml from 'html-lens/formatHtml'
 
-function makeElement(outerHTML) {
-  return {outerHTML}
+function makeElement (outerHTML) {
+  return { outerHTML }
 }
 
-test((t) => {
+test(t => {
   t.is(
-    formatHtml(makeElement(`
-      <!DOCTYPE html>
-      <meta charset="utf-8">
-    `)),
+    formatHtml(
+      makeElement(
+        `
+          <!DOCTYPE html>
+          <meta charset="utf-8">
+        `
+      )
+    ),
     dedent`
       <!doctype html>
       <meta charset="utf-8">
@@ -28,17 +32,21 @@ test((t) => {
   )
 
   t.is(
-    formatHtml(makeElement(`
-      <!doctype html>
-      <html>
-      <head>
-        <meta charset="utf-8">
-      </head>
-      <body>
-        <p>Hello World!</p>
-      </body>
-      </html>
-    `)),
+    formatHtml(
+      makeElement(
+        `
+          <!doctype html>
+          <html>
+          <head>
+            <meta charset="utf-8">
+          </head>
+          <body>
+            <p>Hello World!</p>
+          </body>
+          </html>
+        `
+      )
+    ),
     dedent`
       <!doctype html>
       <html>
@@ -53,11 +61,15 @@ test((t) => {
   )
 
   t.is(
-    formatHtml(makeElement(`
+    formatHtml(
+      makeElement(
+        `
       <p>
         <span>Hello World!</span>
       </p>
-    `)),
+    `
+      )
+    ),
     dedent`
       <p>
         <span>Hello World!</span>

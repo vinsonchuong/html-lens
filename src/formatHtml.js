@@ -1,11 +1,9 @@
 /* @flow */
 import pretty from 'pretty'
 
-type Formattable = {
-  outerHTML: string
-}
+type Formattable = { outerHTML: string };
 
-export default function(element: Formattable): string {
+export default function (element: Formattable): string {
   return pretty(element.outerHTML)
     .replace(/<!doctype html>/i, '<!doctype html>')
     .replace(/<(.*?) \/>/g, '<$1>')
