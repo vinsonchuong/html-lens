@@ -64,10 +64,10 @@ test(t => {
     formatHtml(
       makeElement(
         `
-      <p>
-        <span>Hello World!</span>
-      </p>
-    `
+          <p>
+            <span>Hello World!</span>
+          </p>
+        `
       )
     ),
     dedent`
