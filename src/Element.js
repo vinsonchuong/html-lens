@@ -22,7 +22,7 @@ export default class Element {
     this.outerHTML = minidomElement.outerHTML
     this.textContent = minidomElement.textContent
     this.parentElement = parentElement
-    this.children = [ ...minidomElement.children ].map(
+    this.children = [...minidomElement.children].map(
       minidomElement => new Element(minidomElement, this)
     )
   }

@@ -9,8 +9,10 @@ type Matchable<T> = {
   children: Array<T & Matchable<T>>
 };
 
-function flattenTree<S, T: S & Matchable<S>> (rootElement: T): T[] {
-  let elements = [ rootElement ]
+function flattenTree<T> (
+  rootElement: T & Matchable<T>
+): Array<T & Matchable<T>> {
+  let elements = [rootElement]
   for (let index = 0; index < elements.length; index++) {
     elements = [
       ...elements.slice(0, index + 1),
@@ -21,10 +23,10 @@ function flattenTree<S, T: S & Matchable<S>> (rootElement: T): T[] {
   return elements
 }
 
-export default function findElements<S, T: S & Matchable<S>> (
+export default function findElements<T> (
   selector: string,
-  rootElement: T
-): T[] {
+  rootElement: T & Matchable<T>
+): Array<T & Matchable<T>> {
   const elements = flattenTree(rootElement)
   const elementLookup = new Set(elements)
 

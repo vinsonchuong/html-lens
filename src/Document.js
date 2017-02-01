@@ -11,7 +11,7 @@ export default class Document {
   constructor (html: string) {
     const minidomDocument = minidom(html)
     this.outerHTML = minidomDocument.outerHTML
-    this.children = [ new Element(minidomDocument.documentElement) ]
+    this.children = [new Element(minidomDocument.documentElement)]
   }
 
   toString (): string {

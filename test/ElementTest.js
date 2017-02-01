@@ -48,6 +48,6 @@ test(t => {
 
   t.deepEqual(
     htmlElement.querySelectorAll('*').map(element => element.tagName),
-    [ 'html', 'head', 'meta', 'body', 'p' ]
+    ['html', 'head', 'meta', 'body', 'p']
   )
 })

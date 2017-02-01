@@ -22,7 +22,7 @@
     "url": "https://github.com/vinsonchuong/html-lens"
   },
   "scripts": {
-    "test": "prettier-standard-formatter {src,test}/**/*.js && flow && ava"
+    "test": "prettier --write '!(node_modules)/**/*.js' && standard --fix && flow && ava"
   },
   "dependencies": {
     "babel-runtime": "^6.22.0",
@@ -40,7 +40,8 @@
     "dedent": "^0.6.0",
     "eslint-plugin-flowtype": "^2.30.0",
     "flow-bin": "^0.38.0",
-    "prettier-standard-formatter": "^0.111111111111111.111111111111111"
+    "prettier": "^0.14.1",
+    "standard": "^8.6.0"
   },
   "babel": {
     "presets": [
@@ -72,6 +73,7 @@
       "flowtype"
     ],
     "extends": [
+      "standard",
       "plugin:flowtype/recommended"
     ]
   }

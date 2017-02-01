@@ -133,9 +133,9 @@ ast-types@0.8.18:
   version "0.8.18"
   resolved "https://registry.yarnpkg.com/ast-types/-/ast-types-0.8.18.tgz#c8b98574898e8914e9d8de74b947564a9fe929af"
 
-"ast-types@git+https://github.com/jlongster/ast-types.git":
-  version "0.9.3"
-  resolved "git+https://github.com/jlongster/ast-types.git#4b373d7e710105b07b22a12389ef2d8e1bcf2412"
+ast-types@0.9.4:
+  version "0.9.4"
+  resolved "https://registry.yarnpkg.com/ast-types/-/ast-types-0.9.4.tgz#410d1f81890aeb8e0a38621558ba5869ae53c91b"
 
 async-each@^1.0.0:
   version "1.0.1"
@@ -260,7 +260,7 @@ aws4@^1.2.1:
   version "1.5.0"
   resolved "https://registry.yarnpkg.com/aws4/-/aws4-1.5.0.tgz#0a29ffb79c31c9e712eeb087e8e7a64b4a56d755"
 
-babel-code-frame@^6.16.0, babel-code-frame@^6.22.0:
+babel-code-frame@6.22.0, babel-code-frame@^6.16.0, babel-code-frame@^6.22.0:
   version "6.22.0"
   resolved "https://registry.yarnpkg.com/babel-code-frame/-/babel-code-frame-6.22.0.tgz#027620bee567a88c32561574e7fd0801d33118e4"
   dependencies:
@@ -1738,7 +1738,7 @@ glob-parent@^2.0.0:
   dependencies:
     is-glob "^2.0.0"
 
-glob@^7.0.0, glob@^7.0.3, glob@^7.0.5:
+glob@7.1.1, glob@^7.0.0, glob@^7.0.3, glob@^7.0.5:
   version "7.1.1"
   resolved "https://registry.yarnpkg.com/glob/-/glob-7.1.1.tgz#805211df04faaf1c63a3600306cdf5ade50b2ec8"
   dependencies:
@@ -1764,7 +1764,7 @@ globby@^5.0.0:
     pify "^2.0.0"
     pinkie-promise "^2.0.0"
 
-globby@^6.0.0, globby@^6.1.0:
+globby@^6.0.0:
   version "6.1.0"
   resolved "https://registry.yarnpkg.com/globby/-/globby-6.1.0.tgz#f5a6d70e8395e21c858fb0489d64df02424d506c"
   dependencies:
@@ -2113,6 +2113,22 @@ isstream@~0.1.2:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/isstream/-/isstream-0.1.2.tgz#47e63f7af55afa6f92e1500e690eb8b8529c099a"
 
+jest-matcher-utils@^18.1.0:
+  version "18.1.0"
+  resolved "https://registry.yarnpkg.com/jest-matcher-utils/-/jest-matcher-utils-18.1.0.tgz#1ac4651955ee2a60cef1e7fcc98cdfd773c0f932"
+  dependencies:
+    chalk "^1.1.3"
+    pretty-format "^18.1.0"
+
+jest-validate@18.2.0:
+  version "18.2.0"
+  resolved "https://registry.yarnpkg.com/jest-validate/-/jest-validate-18.2.0.tgz#01f93ac78f23901cf9889808e2bbb931ffc58d86"
+  dependencies:
+    chalk "^1.1.1"
+    jest-matcher-utils "^18.1.0"
+    leven "^2.0.0"
+    pretty-format "^18.1.0"
+
 jodid25519@^1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/jodid25519/-/jodid25519-1.0.2.tgz#06d4912255093419477d425633606e0e90782967"
@@ -2141,10 +2157,6 @@ js-yaml@^3.5.1:
 jsbn@~0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/jsbn/-/jsbn-0.1.0.tgz#650987da0dd74f4ebf5a11377a2aa2d273e97dfd"
-
-jsesc@2.4.0:
-  version "2.4.0"
-  resolved "https://registry.yarnpkg.com/jsesc/-/jsesc-2.4.0.tgz#8568d223ff69c0b5e081b4f8edf5a23d978c9867"
 
 jsesc@^1.3.0:
   version "1.3.0"
@@ -2216,6 +2228,10 @@ latest-version@^2.0.0:
 lazy-req@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/lazy-req/-/lazy-req-1.1.0.tgz#bdaebead30f8d824039ce0ce149d4daa07ba1fac"
+
+leven@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/leven/-/leven-2.0.0.tgz#74c45744439550da185801912829f61d22071bc1"
 
 levn@^0.3.0, levn@~0.3.0:
   version "0.3.0"
@@ -2355,7 +2371,7 @@ minidom@^1.0.0:
   dependencies:
     parse5 "~1.1.4"
 
-minimatch@3.0.2, minimatch@^3.0.0, minimatch@^3.0.2:
+minimatch@^3.0.0, minimatch@^3.0.2:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/minimatch/-/minimatch-3.0.2.tgz#0f398a7300ea441e9c348c83d98ab8c9dbf9c40a"
   dependencies:
@@ -2708,29 +2724,25 @@ preserve@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/preserve/-/preserve-0.2.0.tgz#815ed1f6ebc65926f865b310c0713bcb3315ce4b"
 
-prettier-standard-formatter@^0.111111111111111.111111111111111:
-  version "0.111111111111111.111111111111111"
-  resolved "https://registry.yarnpkg.com/prettier-standard-formatter/-/prettier-standard-formatter-0.111111111111111.111111111111111.tgz#6f83ed1275e8a695bb9f7927c4e0cffb4c711ea8"
+prettier@^0.14.1:
+  version "0.14.1"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-0.14.1.tgz#8cc58ad711c7d25b0e7cc23bea7b531b907f6c1a"
   dependencies:
-    globby "^6.1.0"
-    meow "^3.7.0"
-    prettier "^0.0.9"
-    recursive-readdir "^2.1.0"
-    resolve-cwd "^1.0.0"
-    standard "^8.6.0"
-
-prettier@^0.0.9:
-  version "0.0.9"
-  resolved "https://registry.yarnpkg.com/prettier/-/prettier-0.0.9.tgz#af32f6ad26b67365ebf2f4b48f7149dd1a21d177"
-  dependencies:
-    ast-types "git+https://github.com/jlongster/ast-types.git"
+    ast-types "0.9.4"
+    babel-code-frame "6.22.0"
     babylon "6.15.0"
     esutils "2.0.2"
     flow-parser "0.38.0"
     get-stdin "5.0.1"
-    jsesc "2.4.0"
+    glob "7.1.1"
+    jest-validate "18.2.0"
     minimist "1.2.0"
-    private "0.1.6"
+
+pretty-format@^18.1.0:
+  version "18.1.0"
+  resolved "https://registry.yarnpkg.com/pretty-format/-/pretty-format-18.1.0.tgz#fb65a86f7a7f9194963eee91865c1bcf1039e284"
+  dependencies:
+    ansi-styles "^2.2.1"
 
 pretty-ms@^0.2.1:
   version "0.2.2"
@@ -2752,7 +2764,7 @@ pretty@^1.0.0:
   dependencies:
     js-beautify "~1.5.4"
 
-private@0.1.6, private@^0.1.6:
+private@^0.1.6:
   version "0.1.6"
   resolved "https://registry.yarnpkg.com/private/-/private-0.1.6.tgz#55c6a976d0f9bafb9924851350fe47b9b5fbb7c1"
 
@@ -2864,12 +2876,6 @@ rechoir@^0.6.2:
   resolved "https://registry.yarnpkg.com/rechoir/-/rechoir-0.6.2.tgz#85204b54dba82d5742e28c96756ef43af50e3384"
   dependencies:
     resolve "^1.1.6"
-
-recursive-readdir@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/recursive-readdir/-/recursive-readdir-2.1.0.tgz#78b7bfd79582d3d7596b8ff1bd29fbd50229f6aa"
-  dependencies:
-    minimatch "3.0.2"
 
 redent@^1.0.0:
   version "1.0.0"
