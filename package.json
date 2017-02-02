@@ -41,7 +41,7 @@
     "eslint-plugin-flowtype": "^2.30.0",
     "flow-bin": "^0.38.0",
     "prettier": "^0.14.1",
-    "standard": "^8.6.0"
+    "standard-esnext": "^1.0.3"
   },
   "babel": {
     "presets": [
@@ -64,16 +64,6 @@
     "babel": "inherit",
     "require": [
       "babel-register"
-    ]
-  },
-  "standard": {
-    "parser": "babel-eslint",
-    "plugins": [
-      "flowtype"
-    ],
-    "extends": [
-      "standard",
-      "plugin:flowtype/recommended"
     ]
   }
 }
