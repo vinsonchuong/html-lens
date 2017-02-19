@@ -1,6 +1,6 @@
 /* @flow */
 import test from 'ava'
-import findElements from 'html-lens/findElements'
+import findElements from 'html-lens/src/findElements'
 
 function makeElement (tagName, attributes = {}, parentElement) {
   return { tagName, attributes, textContent: '', parentElement, children: [] }

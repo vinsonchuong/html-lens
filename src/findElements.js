@@ -4,10 +4,12 @@ import cssauron from 'cssauron'
 type Matchable<T> = {
   tagName: string,
   textContent: string,
-  attributes: { [name: string]: string },
+  attributes: {
+    [name: string]: string
+  },
   parentElement: ?(T & Matchable<T>),
   children: Array<T & Matchable<T>>
-};
+}
 
 function flattenTree<T> (
   rootElement: T & Matchable<T>

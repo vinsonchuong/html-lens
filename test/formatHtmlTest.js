@@ -1,7 +1,7 @@
 /* @flow */
 import test from 'ava'
 import dedent from 'dedent'
-import formatHtml from 'html-lens/formatHtml'
+import formatHtml from 'html-lens/src/formatHtml'
 
 function makeElement (outerHTML) {
   return { outerHTML }

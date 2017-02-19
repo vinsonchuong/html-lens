@@ -5,8 +5,8 @@ import formatHtml from './formatHtml'
 import findElements from './findElements'
 
 export default class Document {
-  outerHTML: string;
-  children: Element[];
+  outerHTML: string
+  children: Element[]
 
   constructor (html: string) {
     const minidomDocument = minidom(html)

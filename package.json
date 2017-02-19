@@ -22,7 +22,8 @@
     "url": "https://github.com/vinsonchuong/html-lens"
   },
   "scripts": {
-    "test": "prettier --write '!(node_modules)/**/*.js' && standard --fix && flow && ava"
+    "test": "standard --fix && flow && ava",
+    "prepare": "build-esm"
   },
   "dependencies": {
     "babel-runtime": "^6.22.0",
@@ -31,33 +32,24 @@
     "pretty": "^1.0.0"
   },
   "devDependencies": {
-    "ava": "^0.17.0",
-    "babel-eslint": "^7.1.1",
-    "babel-plugin-module-resolver": "^2.4.0",
-    "babel-plugin-transform-flow-strip-types": "^6.22.0",
+    "ava": "^0.18.1",
+    "babel-plugin-package-name-import": "^1.0.0",
     "babel-plugin-transform-runtime": "^6.22.0",
+    "babel-preset-flow": "^6.23.0",
     "babel-preset-latest": "^6.22.0",
-    "dedent": "^0.6.0",
-    "eslint-plugin-flowtype": "^2.30.0",
-    "flow-bin": "^0.38.0",
-    "prettier": "^0.14.1",
+    "build-esm": "^1.1.3",
+    "dedent": "^0.7.0",
+    "flow-bin": "^0.39.0",
     "standard-esnext": "^1.0.3"
   },
   "babel": {
     "presets": [
-      "latest"
+      "latest",
+      "flow"
     ],
     "plugins": [
       "transform-runtime",
-      "transform-flow-strip-types",
-      [
-        "module-resolver",
-        {
-          "alias": {
-            "html-lens": "./src"
-          }
-        }
-      ]
+      "package-name-import"
     ]
   },
   "ava": {

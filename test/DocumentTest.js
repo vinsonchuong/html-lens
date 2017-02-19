@@ -1,7 +1,7 @@
 /* @flow */
 import test from 'ava'
 import dedent from 'dedent'
-import Document from 'html-lens/Document'
+import Document from 'html-lens/src/Document'
 
 test(t => {
   const document = new Document(

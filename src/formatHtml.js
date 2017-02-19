@@ -1,7 +1,7 @@
 /* @flow */
 import pretty from 'pretty'
 
-type Formattable = { outerHTML: string };
+type Formattable = { outerHTML: string }
 
 export default function (element: Formattable): string {
   return pretty(element.outerHTML)

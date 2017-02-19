@@ -2,7 +2,7 @@
 import test from 'ava'
 import dedent from 'dedent'
 import minidom from 'minidom'
-import Element from 'html-lens/Element'
+import Element from 'html-lens/src/Element'
 
 test(t => {
   const minidomDocument = minidom(
