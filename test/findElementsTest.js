@@ -7,16 +7,18 @@ function makeElement (tagName, attributes = {}, parentElement) {
 }
 
 test(t => {
-  const div = makeElement('div')
-  const span = makeElement('span', { id: 'id', class: 'class' }, div)
-  div.children.push(span)
+  const container = makeElement('div')
+  const child1 = makeElement('span', { id: 'c1', class: 'c1' }, container)
+  const child2 = makeElement('span', { id: 'c2', class: 'c2' }, container)
+  container.children.push(child1)
+  container.children.push(child2)
 
-  t.deepEqual(findElements('div', div), [div])
-  t.deepEqual(findElements('span', div), [span])
-  t.deepEqual(findElements('.class', div), [span])
-  t.deepEqual(findElements('#id', div), [span])
-  t.deepEqual(findElements('span[id="id"]', div), [span])
-  t.deepEqual(findElements('div > span', div), [span])
+  t.deepEqual(findElements('div', container), [])
+  t.deepEqual(findElements('span', container), [child1, child2])
+  t.deepEqual(findElements('.c1', container), [child1])
+  t.deepEqual(findElements('#c1', container), [child1])
+  t.deepEqual(findElements('span[id="c1"]', container), [child1])
+  t.deepEqual(findElements('div > span', container), [child1, child2])
 
-  t.deepEqual(findElements('div > span', span), [])
+  t.deepEqual(findElements('div > span', child1), [])
 })

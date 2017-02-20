@@ -14,7 +14,7 @@ type Matchable<T> = {
 function flattenTree<T> (
   rootElement: T & Matchable<T>
 ): Array<T & Matchable<T>> {
-  let elements = [rootElement]
+  let elements = rootElement.children.slice()
   for (let index = 0; index < elements.length; index++) {
     elements = [
       ...elements.slice(0, index + 1),
@@ -30,15 +30,16 @@ export default function findElements<T> (
   rootElement: T & Matchable<T>
 ): Array<T & Matchable<T>> {
   const elements = flattenTree(rootElement)
-  const elementLookup = new Set(elements)
+  const parentElementLookup = new Set(elements).add(rootElement)
 
   const match = cssauron({
     tag: 'tagName',
     contents: 'textContent',
     id: 'attributes.id',
     class: 'attributes.class',
-    parent: element =>
-      elementLookup.has(element.parentElement) ? element.parentElement : null,
+    parent: element => parentElementLookup.has(element.parentElement)
+      ? element.parentElement
+      : null,
     children: 'children',
     attr: 'attributes[attr]'
   })(selector)
